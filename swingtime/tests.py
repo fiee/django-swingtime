@@ -10,7 +10,7 @@ from django.core.management import call_command
 from swingtime import utils
 from swingtime.models import *
 
-expected_table_1 = '''\
+expected_table_1 = """\
 | 15:00 |          |          |          |          |          |
 | 15:15 | zelda    |          |          |          |          |
 | 15:30 | zelda    | alpha    |          |          |          |
@@ -24,9 +24,9 @@ expected_table_1 = '''\
 | 17:30 | echo     | alpha    |          |          |          |
 | 17:45 | echo     |          |          |          |          |
 | 18:00 |          |          |          |          |          |
-'''
+"""
 
-expected_table_2 = '''\
+expected_table_2 = """\
 | 15:30 | zelda    | alpha    |          |          |          |
 | 15:45 |          | alpha    |          |          |          |
 | 16:00 | bravo    | alpha    | foxtrot  |          |          |
@@ -36,9 +36,9 @@ expected_table_2 = '''\
 | 17:00 |          | alpha    |          |          | delta    |
 | 17:15 | echo     | alpha    |          |          |          |
 | 17:30 | echo     | alpha    |          |          |          |
-'''
+"""
 
-expected_table_3 = '''\
+expected_table_3 = """\
 | 16:00 | alpha    | bravo    | foxtrot  |          |          |
 | 16:15 | alpha    | bravo    | foxtrot  | charlie  |          |
 | 16:30 | alpha    | bravo    | foxtrot  | charlie  | delta    |
@@ -46,9 +46,9 @@ expected_table_3 = '''\
 | 17:00 | alpha    |          |          |          | delta    |
 | 17:15 | alpha    | echo     |          |          |          |
 | 17:30 | alpha    | echo     |          |          |          |
-'''
+"""
 
-expected_table_4 = '''\
+expected_table_4 = """\
 | 18:00 |          |          |          |          |
 | 18:15 |          |          |          |          |
 | 18:30 |          |          |          |          |
@@ -56,22 +56,19 @@ expected_table_4 = '''\
 | 19:00 |          |          |          |          |
 | 19:15 |          |          |          |          |
 | 19:30 |          |          |          |          |
-'''
+"""
 
-expected_table_5 = '''\
+expected_table_5 = """\
 | 16:30 | alpha    | bravo    | foxtrot  | charlie  | delta    |
-'''
+"""
 
-#===============================================================================
+
 class TableTest(TestCase):
-
     fixtures = ['swingtime_test']
 
-    #---------------------------------------------------------------------------
     def setUp(self):
         self._dt = dt = datetime(2008,12,11)
 
-    #---------------------------------------------------------------------------
     def table_as_string(self, table):
         timefmt = '| %-5s'
         cellfmt = '| %-8s'
@@ -84,10 +81,9 @@ class TableTest(TestCase):
                 else:
                     print >> out, cellfmt % '',
             print >> out, '|'
-            
+
         return out.getvalue()
 
-    #---------------------------------------------------------------------------
     def _do_test(self, start, end, expect):
         import pdb
         start = time(*start)
@@ -102,36 +98,28 @@ class TableTest(TestCase):
         print out
         self.assertEqual(actual, expect, out)
 
-    #---------------------------------------------------------------------------
     def test_slot_table_1(self):
         self._do_test((15,0), (18,0), expected_table_1)
 
-    #---------------------------------------------------------------------------
     def test_slot_table_2(self):
         self._do_test((15,30), (17,30), expected_table_2)
 
-    #---------------------------------------------------------------------------
     def test_slot_table_3(self):
         self._do_test((16,0), (17,30), expected_table_3)
 
-    #---------------------------------------------------------------------------
     def test_slot_table_4(self):
         self._do_test((18,0), (19,30), expected_table_4)
 
-    #---------------------------------------------------------------------------
     def test_slot_table_5(self):
         self._do_test((16,30), (16,30), expected_table_5)
 
 
-#===============================================================================
 class NewEventFormTest(TestCase):
-
     fixtures = ['swingtime_test']
-    
-    #---------------------------------------------------------------------------
+
     def test_new_event_simple(self):
         from swingtime.forms import EventForm, MultipleOccurrenceForm
-        
+
         data = dict(
             title='QWERTY',
             event_type='1',
@@ -148,21 +136,21 @@ class NewEventFormTest(TestCase):
             occurences='2',
             month_ordinal='1'
         )
-        
+
         evt_form = EventForm(data)
         occ_form = MultipleOccurrenceForm(data)
         self.assertTrue(evt_form.is_valid(), evt_form.errors.as_text())
         self.assertTrue(occ_form.is_valid(), occ_form.errors.as_text())
-        
+
         self.assertEqual(
             occ_form.cleaned_data['start_time'],
             datetime(2008, 12, 11, 8),
             'Bad start_time: %s' % pformat(occ_form.cleaned_data)
         )
 
-#-------------------------------------------------------------------------------
+
 def doc_tests():
-    '''
+    """
         >>> from dateutil import rrule
         >>> from datetime import datetime
         >>> from swingtime.models import *
@@ -188,7 +176,7 @@ def doc_tests():
         ... )
         >>> for o in e.occurrence_set.all():
         ...     print o.start_time, o.end_time
-        ... 
+        ...
         2008-12-02 12:00:00 2008-12-02 13:00:00
         2008-12-04 12:00:00 2008-12-04 13:00:00
         2008-12-09 12:00:00 2008-12-09 13:00:00
@@ -198,5 +186,5 @@ def doc_tests():
         2008-12-23 12:00:00 2008-12-23 13:00:00
         2008-12-25 12:00:00 2008-12-25 13:00:00
         2008-12-30 12:00:00 2008-12-30 13:00:00
-    '''
+    """
     pass

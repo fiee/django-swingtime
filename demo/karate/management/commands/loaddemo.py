@@ -14,7 +14,7 @@ from dateutil import rrule
 from swingtime import models as swingtime
 
 
-#-------------------------------------------------------------------------------
+
 def create_sample_data():
     
     # Create the studio's event types
@@ -99,11 +99,11 @@ def create_sample_data():
 
 
 
-#===============================================================================
+
 class Command(NoArgsCommand):
     help = 'Run the swingtime demo. If an existing demo database exists, it will recreated.'
     
-    #---------------------------------------------------------------------------
+    
     def handle_noargs(self, **options):
         import os
         dbpath = os.path.join(settings.PROJECT_DIR, settings.DATABASE_NAME)
