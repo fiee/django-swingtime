@@ -52,6 +52,16 @@ INSTALLED_APPS = (
     'karate',
 )
 
+
+MIDDLEWARE_CLASSES = [
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+]
+
+
 SWINGTIME_SETTINGS_MODULE = 'demo.swingtime_settings'
 
 try:
