@@ -1,7 +1,7 @@
 import datetime
 
 # A "strftime" string for formatting start and end time selectors in forms
-TIMESLOT_TIME_FORMAT = '%I:%M %p'
+TIMESLOT_TIME_FORMAT = '%H:%M'
 
 # Used for creating start and end time form selectors as well as time slot grids.
 # Value should be datetime.timedelta value representing the incremental 

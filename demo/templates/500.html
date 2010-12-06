@@ -1,9 +1,9 @@
-{% extends "base.html" %}
-{% block title %}Server Error{% endblock %}
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% trans "Server Error" %}{% endblock %}
 {% block main_content %}
-<h2>Server Error</h2>
-<p>
+<h2>{% trans "Server Error</h2>
+<p>{% blocktrans %}
     The server has encountered an application error. A notification has been
-    sent to the system administrator and will be investigated promptly.
+    sent to the system administrator and will be investigated promptly.{% endblocktrans %}
 </p>
 {% endblock %}

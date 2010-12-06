@@ -1,17 +1,19 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block main_content %}
+    {% blocktrans %}
     <h3>Welcome to the Karate Dojo!</h3>
     <p>Check out upcoming class offerings by selecting from the menu above</p>
+    {% endblocktrans %}
 
+    {% blocktrans %}
     <h3>Our Belt Classes</h3>
-    <p>
-        Select your belt below to see upcoming events:
-    </p>
+    <p>Select your belt below to see upcoming events:</p>
+    {% endblocktrans %}
     <ul id="belts">
-        <li><a id="white-belt" href="{% url karate-event "bgn" %}">White belt</a></li>
-        <li><a id="yellow-belt" href="{% url karate-event "bgn" %}">Yellow belt</a></li>
-        <li><a id="green-belt" href="{% url karate-event "adv" %}">Green belt</a></li>
-        <li><a id="brown-belt" href="{% url karate-event "adv" %}">Brown belt</a></li>
-        <li><a id="black-belt" href="{% url karate-event "bbc" %}">Black belt</a></li>
+        <li><a id="white-belt" href="{% url karate-event "bgn" %}">{% trans "White belt" %}</a></li>
+        <li><a id="yellow-belt" href="{% url karate-event "bgn" %}">{% trans "Yellow belt" %}</a></li>
+        <li><a id="green-belt" href="{% url karate-event "adv" %}">{% trans "Green belt" %}</a></li>
+        <li><a id="brown-belt" href="{% url karate-event "adv" %}">{% trans "Brown belt" %}</a></li>
+        <li><a id="black-belt" href="{% url karate-event "bbc" %}">{% trans "Black belt" %}</a></li>
     </ul>
 {% endblock main_content %}

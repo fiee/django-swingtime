@@ -1,8 +1,7 @@
-{% extends "base.html" %}
+{% extends "base.html" %}{% load i18n %}
 {% block main_content %}
-    <h3>Missing Resource</h3>
+    <h3>{% trans "Missing Resource" %}</h3>
     <p>
-        It appears that the path you have requested is missing or no longer
-        available;
+        {% blocktrans %}It appears that the path you have requested is missing or no longer available.{% endblocktrans %}
     </p>
 {% endblock main_content %}

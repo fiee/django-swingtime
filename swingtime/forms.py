@@ -192,7 +192,8 @@ class MultipleOccurrenceForm(forms.Form):
     day = forms.DateField(
         label=_(u'Date'),
         initial=date.today,
-        widget=SelectDateWidget()
+        widget=SelectDateWidget(),
+        localize=True,
     )
 
     start_time_delta = forms.IntegerField(
@@ -210,7 +211,8 @@ class MultipleOccurrenceForm(forms.Form):
         choices=REPEAT_CHOICES,
         initial='count',
         label=_(u'Occurrences'),
-        widget=forms.RadioSelect()
+        widget=forms.RadioSelect(),
+        localize=True,
     )
 
     count = forms.IntegerField(
@@ -223,7 +225,8 @@ class MultipleOccurrenceForm(forms.Form):
     until = forms.DateField(
         required=False,
         initial=date.today,
-        widget=SelectDateWidget()
+        widget=SelectDateWidget(),
+        localize=True,
     )
 
     freq = forms.IntegerField(
@@ -250,7 +253,8 @@ class MultipleOccurrenceForm(forms.Form):
         choices=(('on',_(u'On the')), ('each',_(u'Each:'))),
         initial='each',
         widget=forms.RadioSelect(),
-        label=_(u'Monthly options')
+        label=_(u'Monthly options'),
+        localize=True,
     )
 
     month_ordinal = forms.IntegerField(widget=forms.Select(choices=ORDINAL))
@@ -382,8 +386,8 @@ class SingleOccurrenceForm(forms.ModelForm):
     A simple form for adding and updating single Occurrence attributes
     """
 
-    start_time = forms.DateTimeField(widget=SplitDateTimeWidget)
-    end_time = forms.DateTimeField(widget=SplitDateTimeWidget)
+    start_time = forms.DateTimeField(widget=SplitDateTimeWidget, localize=True,)
+    end_time = forms.DateTimeField(widget=SplitDateTimeWidget, localize=True,)
 
     class Meta:
         model = Occurrence
