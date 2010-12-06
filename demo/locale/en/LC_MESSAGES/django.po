@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: swingtime demo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-06 22:06+0100\n"
+"PO-Revision-Date: 2010-12-06 22:23+0100\n"
+"Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
+"Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: karate/templates/karate/upcoming_by_event_type.html:2
+#, python-format
+msgid "Upcoming %(event_type)s Events"
+msgstr ""
+
+#: karate/templates/karate/upcoming_by_event_type.html:4
+#, python-format
+msgid "Upcoming %(event_type)s"
+msgstr ""
+
+#: templates/404.html:3
+msgid "Missing Resource"
+msgstr ""
+
+#: templates/404.html:5
+msgid "It appears that the path you have requested is missing or no longer available."
+msgstr ""
+
+#: templates/500.html:2
+msgid "Server Error"
+msgstr ""
+
+#: templates/500.html:5
+msgid ""
+"\n"
+"    The server has encountered an application error. A notification has been\n"
+"    sent to the system administrator and will be investigated promptly."
+msgstr ""
+
+#: templates/base.html:14
+msgid "Swingtime Demo"
+msgstr ""
+
+#: templates/base.html:17
+msgid "The Karate Dojo"
+msgstr ""
+
+#: templates/base.html:19
+#: templates/swingtime/daily_view.html:2
+#: templates/swingtime/daily_view.html:4
+msgid "Daily View"
+msgstr ""
+
+#: templates/base.html:20
+#: templates/swingtime/monthly_view.html:2
+#: templates/swingtime/monthly_view.html:4
+msgid "Monthly View"
+msgstr ""
+
+#: templates/base.html:21
+msgid "Yearly View"
+msgstr ""
+
+#: templates/base.html:22
+msgid "Event Listing"
+msgstr ""
+
+#: templates/intro.html:12
+msgid "Introduction"
+msgstr ""
+
+#: templates/intro.html:13
+msgid ""
+"\n"
+"    <p>\n"
+"        Welcome to the Swingtime (django-swingtime) demonstration site. Swingtime\n"
+"        is calendar event scheduling application for \n"
+"        <a href=\"http://www.djangoproject.com/\">Django</a>.\n"
+"    </p>\n"
+"    "
+msgstr ""
+
+#: templates/intro.html:20
+msgid ""
+"\n"
+"    <p>\n"
+"        The purpose of this site is to showcase some of the Swingtime's features\n"
+"        and allow some simple interaction. The theme for the demo is a Karate dojo.\n"
+"    </p>\n"
+"    "
+msgstr ""
+
+#: templates/intro.html:27
+msgid "Continue Demo"
+msgstr ""
+
+#: templates/intro.html:28
+msgid "Swingtime Documentation"
+msgstr ""
+
+#: templates/intro.html:29
+msgid "Swingtime Source Code"
+msgstr ""
+
+#: templates/karate.html:3
+msgid ""
+"\n"
+"    <h3>Welcome to the Karate Dojo!</h3>\n"
+"    <p>Check out upcoming class offerings by selecting from the menu above</p>\n"
+"    "
+msgstr ""
+
+#: templates/karate.html:8
+msgid ""
+"\n"
+"    <h3>Our Belt Classes</h3>\n"
+"    <p>Select your belt below to see upcoming events:</p>\n"
+"    "
+msgstr ""
+
+#: templates/karate.html:13
+msgid "White belt"
+msgstr ""
+
+#: templates/karate.html:14
+msgid "Yellow belt"
+msgstr ""
+
+#: templates/karate.html:15
+msgid "Green belt"
+msgstr ""
+
+#: templates/karate.html:16
+msgid "Brown belt"
+msgstr ""
+
+#: templates/karate.html:17
+msgid "Black belt"
+msgstr ""
+
+#: templates/swingtime/add_event.html:2
+#: templates/swingtime/add_event.html:4
+msgid "Add Event"
+msgstr ""
+
+#: templates/swingtime/add_event.html:8
+msgid "Please fix any errors."
+msgstr ""
+
+#: templates/swingtime/add_event.html:14
+msgid "Submit"
+msgstr ""
+
+#: templates/swingtime/daily_view.html:13
+msgid "Time"
+msgstr ""
+
+#: templates/swingtime/daily_view.html:14
+msgid "Main Room"
+msgstr ""
+
+#: templates/swingtime/daily_view.html:15
+msgid "Private 2"
+msgstr ""
+
+#: templates/swingtime/daily_view.html:16
+msgid "Private 3"
+msgstr ""
+
+#: templates/swingtime/daily_view.html:17
+msgid "Private 4"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:2
+#, python-format
+msgid "Event: %(event)s"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:4
+msgid "Event"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:5
+msgid "Event Details"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:11
+#: templates/swingtime/occurrence_detail.html:39
+msgid "Update"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:21
+msgid "Notes"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:30
+msgid "None"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:34
+msgid "Occurrences"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:48
+msgid "Add Occurrences"
+msgstr ""
+
+#: templates/swingtime/event_detail.html:53
+msgid "Add"
+msgstr ""
+
+#: templates/swingtime/event_list.html:2
+#: templates/swingtime/event_list.html:4
+msgid "All Events"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:7
+#: templates/swingtime/yearly_view.html:6
+msgid "Last Month"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:9
+#, python-format
+msgid "View %(year)s"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:12
+#: templates/swingtime/yearly_view.html:9
+msgid "Next Month"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:18
+msgid "Sun"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:19
+msgid "Mon"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:20
+msgid "Tue"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:21
+msgid "Wed"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:22
+msgid "Thu"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:23
+msgid "Fri"
+msgstr ""
+
+#: templates/swingtime/monthly_view.html:24
+msgid "Sat"
+msgstr ""
+
+#: templates/swingtime/occurrence_detail.html:2
+#: templates/swingtime/occurrence_detail.html:4
+msgid "Event Occurrence"
+msgstr ""
+
+#: templates/swingtime/occurrence_detail.html:14
+msgid "Event type"
+msgstr ""
+
+#: templates/swingtime/occurrence_detail.html:17
+msgid "Description"
+msgstr ""
+
+#: templates/swingtime/occurrence_detail.html:20
+msgid "Note(s)"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:15
+#, python-format
+msgid ""
+"<label for=\"id_repeats_0\"> A total of</label>\n"
+"                        %(times)s time(s)"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:19
+msgid "Until"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:26
+#, python-format
+msgid "Every %(interval)s "
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:30
+msgid "Day(s)"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:35
+msgid "Week(s)"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:44
+msgid "Month(s)"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:51
+#: templates/swingtime/recurring_form_part.html:81
+msgid "On the"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:59
+msgid "Each"
+msgstr ""
+
+#: templates/swingtime/recurring_form_part.html:72
+msgid "Year(s)"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:2
+#: templates/swingtime/yearly_view.html:7
+#, python-format
+msgid "Yearly View %(year)s"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:16
+msgid "Month"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:17
+msgid "Title"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:18
+msgid "Day"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:19
+msgid "Start"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:20
+msgid "End"
+msgstr ""
+
+#: templates/swingtime/yearly_view.html:44
+#, python-format
+msgid "<p>No events occurring in %(year)s</p>"
+msgstr ""
+
