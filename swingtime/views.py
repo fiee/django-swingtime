@@ -3,6 +3,7 @@ import itertools
 from datetime import datetime, timedelta, time
 
 from django import http
+from django.conf import settings
 from django.db import models
 from django.template.context import RequestContext
 from django.shortcuts import get_object_or_404, render_to_response
@@ -15,7 +16,6 @@ from dateutil import parser
 
 if swingtime_settings.CALENDAR_FIRST_WEEKDAY is not None:
     calendar.setfirstweekday(swingtime_settings.CALENDAR_FIRST_WEEKDAY)
-
 
 def event_listing(request, template='swingtime/event_list.html', events=None,
     **extra_context):
@@ -255,7 +255,7 @@ def year_view(request, year, template='swingtime/yearly_view.html', queryset=Non
 def month_view(request, year, month, template='swingtime/monthly_view.html',
     queryset=None):
     """
-    Render a tradional calendar grid view with temporal navigation variables.
+    Render a traditional calendar grid view with temporal navigation variables.
 
     Context parameters:
 
@@ -266,6 +266,9 @@ def month_view(request, year, month, template='swingtime/monthly_view.html',
         a list of rows containing (day, items) cells, where day is the day of
         the month integer and items is a (potentially empty) list of occurrence
         for the day
+        
+    week
+        localized list of weekdays, depending on FIRST_DAY_OF_WEEK
 
     this_month
         a datetime.datetime representing the first day of the month
@@ -279,6 +282,10 @@ def month_view(request, year, month, template='swingtime/monthly_view.html',
     """
     year, month = int(year), int(month)
 
+    if settings.FIRST_DAY_OF_WEEK==0:
+        calendar.setfirstweekday(6)
+    else:
+        calendar.setfirstweekday(settings.FIRST_DAY_OF_WEEK-1)
     cal = calendar.monthcalendar(year, month)
     dtstart = datetime(year, month, 1)
     last_day = max(cal[-1])
@@ -297,10 +304,16 @@ def month_view(request, year, month, template='swingtime/monthly_view.html',
         (dom, list(items))
         for dom,items in itertools.groupby(occurrences, lambda o: o.start_time.day)
     ])
+    
+    weekdays = range(8)
+    for wd in forms.WEEKDAY_LONG:
+        weekdays[wd[0]] = wd[1]
+    weekdays[0] = weekdays[7]
 
     data = dict(
         today=datetime.now(),
         calendar=[[(d, by_day.get(d, [])) for d in row] for row in cal],
+        week=(weekdays[i] for i in range(settings.FIRST_DAY_OF_WEEK, settings.FIRST_DAY_OF_WEEK+7)),
         this_month=dtstart,
         next_month=dtstart + timedelta(days=+last_day),
         last_month=dtstart + timedelta(days=-1),
