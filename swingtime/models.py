@@ -40,7 +40,7 @@ class Note(models.Model):
 
 class EventType(models.Model):
     """
-    Simple ``Event`` classifcation.
+    Simple ``Event`` classification.
     """
     abbr = models.CharField(_('abbreviation'), max_length=4, unique=True)
     label = models.CharField(_('label'), max_length=50)
