@@ -5,5 +5,6 @@ describe start and end times for a specific occurrence of an event.
 
 For a detailed description, please see <http://github.com/dakrauth/django-swingtime/wikis>
 
-Source code can be found at <http://github.com/dakrauth/django-swingtime/tree/master>
+Source code can be found at <http://github.com/fiee/django-swingtime/tree/master>
 
+(This is fiee's fork.)
