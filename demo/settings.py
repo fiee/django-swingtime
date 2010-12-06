@@ -15,9 +15,16 @@ sys.path.append(os.path.dirname(PROJECT_DIR))
 DEBUG = TEMPLATE_DEBUG = True
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME = 'karate.db'
-TIME_ZONE = 'America/New_York'
+
 SITE_ID = 1
+TIME_ZONE = 'Europe/Zurich'
+LANGUAGE_CODE = 'de'
+LANGUAGES = (('en', 'English'),
+             ('de', 'German'),)
 USE_I18N = True
+USE_L10N = True
+FIRST_DAY_OF_WEEK = 1
+
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
@@ -41,7 +48,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    
     'swingtime',
     'karate',
 )
