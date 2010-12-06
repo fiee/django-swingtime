@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+*.pyo
+*.log
+*.tar.gz
+*.bak
+.tmp*
+.project
+.pydevproject
+.settings
+.svn
