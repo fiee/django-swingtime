@@ -14,7 +14,12 @@ from swingtime.conf import settings as swingtime_settings
 
 from dateutil import parser
 
-if swingtime_settings.CALENDAR_FIRST_WEEKDAY is not None:
+if settings.FIRST_DAY_OF_WEEK is not None:
+    if settings.FIRST_DAY_OF_WEEK==0:
+        calendar.setfirstweekday(6)
+    else:
+        calendar.setfirstweekday(settings.FIRST_DAY_OF_WEEK-1)
+elif swingtime_settings.CALENDAR_FIRST_WEEKDAY is not None:
     calendar.setfirstweekday(swingtime_settings.CALENDAR_FIRST_WEEKDAY)
 
 def event_listing(request, template='swingtime/event_list.html', events=None,
@@ -281,11 +286,6 @@ def month_view(request, year, month, template='swingtime/monthly_view.html',
 
     """
     year, month = int(year), int(month)
-
-    if settings.FIRST_DAY_OF_WEEK==0:
-        calendar.setfirstweekday(6)
-    else:
-        calendar.setfirstweekday(settings.FIRST_DAY_OF_WEEK-1)
     cal = calendar.monthcalendar(year, month)
     dtstart = datetime(year, month, 1)
     last_day = max(cal[-1])
