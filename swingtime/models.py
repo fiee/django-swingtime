@@ -222,8 +222,10 @@ def create_event(title, event_type, description='', start_time=None,
     if isinstance(event_type, tuple):
         event_type, created = EventType.objects.get_or_create(
             abbr=event_type[0],
-            label=event_type[1]
         )
+        if created:
+            event_type.label=event_type[1]
+            event_type.save()
 
     event = Event.objects.create(
         title=title,
